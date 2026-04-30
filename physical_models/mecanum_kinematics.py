@@ -19,8 +19,7 @@ class MecanumParams(Params):
 class MecanumKinematics:
     #Fl, FR, RL, RR
     _S = np.array([-1,1,1,-1])
-    def __init__(self,params:MecanumParams,start_pos:np.ndarray):
-        self.p = start_pos
+    def __init__(self,params:MecanumParams):
         self.params = params
         Lx, Ly = params.half_wheelbase, params.half_track
         px = np.array([+Lx, +Lx, -Lx, -Lx])
