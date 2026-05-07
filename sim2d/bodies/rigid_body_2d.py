@@ -1,11 +1,12 @@
 import numpy as np
 
 from .body import Body
-from physical.properties.inertia.inertia_matrix import InertiaMatrix
+from .rigid_body_params import RigidBodyParams
+
 
 class RigidBody2D(Body):
-    def __init__(self,inertia:InertiaMatrix,mass,init_pos:np.ndarray):
-        self.inertia = inertia
+    def __init__(self,params:RigidBodyParams,init_pos:np.ndarray):
+        self.params = params
         self.state = np.zeros(6)
 
 
